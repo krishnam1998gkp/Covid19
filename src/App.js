@@ -1,13 +1,17 @@
-import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import HomePage from './Pages/homepage';
+import Navbarheader from './components/navbar/navbar.component';
 
-function App() {
-  return (
-    <div className="App">
-     <div>react app </div>
-    </div>
-  );
-}
 
-export default App;
+class App extends Component{
+  constructor(){
+    super();
+  }
+  render(){
+    return(
+      <div className="App">
+        <Navbarheader/>
+       <HomePage />
+      </div>
+    )
+  }
