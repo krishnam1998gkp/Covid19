@@ -2,7 +2,46 @@
     height: 100px;
     box-shadow: 0 2rem 5rem rgba(94, 93, 93, 0.486);
 }
+
 .navbar{
     height: 100%;
-    
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0;
+
+    &-logo{
+        margin-right: 5rem;
+        
+    }
+
+    &-links{
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: 500;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+        text-transform: uppercase;
+    }
+
+    &-link{
+        color: red;
+
+        &-link__1{
+
+        }
+        &-link__2{
+
+        }
+        &-link__3{
+
+        }
+        &-link__4{
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+    }
+   }
