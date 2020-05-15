@@ -11,6 +11,9 @@ class Navbarheader extends Component{
       }
 
     render(){
+
+
+
     return(
     <div className="section-navbar">
         <div className="navbar">
@@ -24,9 +27,9 @@ class Navbarheader extends Component{
                     <Link href="#" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
             </div>
         </div>
-        <div className="nav-btn-div">
+        {/* <div className="nav-btn-div">
               <button className="nav-btn"></button>
-        </div>
+        </div> */}
     </div>
     )
   }
