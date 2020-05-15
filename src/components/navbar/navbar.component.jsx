@@ -16,6 +16,7 @@ class Navbarheader extends Component{
 
     return(
     <div className="section-navbar">
+        <title>covidcare</title>
         <div className="navbar">
             <div className="navbar-logo">
                 <Link to="/"><img src={Logo} alt="LOGO" className="navbar-logo-img"></img></Link>
