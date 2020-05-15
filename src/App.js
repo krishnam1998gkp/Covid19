@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import HomePage from './Pages/homepage';
 
 class App extends Component{
   constructor(){
@@ -7,7 +8,7 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <h1>Krishnam</h1>
+        <HomePage />
       </div>
     )
   }
