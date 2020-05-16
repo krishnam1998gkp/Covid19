@@ -17,7 +17,14 @@ class Navbarheader extends Component{
     return(
     <div className="section-navbar">
         <title>covidcare</title>
+        
         <div className="navbar">
+          
+           <input type="checkbox" class="navigation__checkbox" id="navi-toggle"></input>
+            <label for="navi-toggle" class="navigation__button">
+                    <span class="navigation__icon">&nbsp;</span>
+            </label>
+          
             <div className="navbar-logo">
                 <Link to="/"><img src={Logo} alt="LOGO" className="navbar-logo-img"></img></Link>
             </div>
@@ -28,9 +35,7 @@ class Navbarheader extends Component{
                     <Link href="#" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
             </div>
         </div>
-        {/* <div className="nav-btn-div">
-              <button className="nav-btn"></button>
-        </div> */}
+        
     </div>
     )
   }
