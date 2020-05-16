@@ -4,7 +4,7 @@ import {Switch , Route, Redirect} from 'react-router-dom';
 
 import HomePage from './Pages/homepage';
 import Navbarheader from './Components/navbar/navbar.component';
-
+import Footer from './Components/footer/footer.component';
 
 class App extends Component{
   constructor(){
@@ -14,9 +14,11 @@ class App extends Component{
     return(
       <div className="App">
         <Navbarheader/>
+        
         <Switch>
         <Route exact path='/' component={HomePage} />
         </Switch>
+        <Footer/>
       </div>
     )
   }

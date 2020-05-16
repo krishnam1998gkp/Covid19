@@ -16,11 +16,9 @@ class Navbarheader extends Component{
 
       toggleBox = () => {
         this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));
-        //alert('hello');
       };
 
     render(){
-
       const { isBoxVisible } = this.state;
 
     return(
