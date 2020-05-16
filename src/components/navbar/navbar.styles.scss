@@ -76,7 +76,7 @@
         transform: rotate(-135deg);
     }
 
-    &__checkbox:checked > .navbar-link__1 {
+    &__checkbox:checked .navbar-link__1 {
         display: none;
     }
 }
