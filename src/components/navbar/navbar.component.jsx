@@ -19,20 +19,22 @@ class Navbarheader extends Component{
         <title>covidcare</title>
         
         <div className="navbar">
-          
-           <input type="checkbox" class="navigation__checkbox" id="navi-toggle"></input>
-            <label for="navi-toggle" class="navigation__button">
-                    <span class="navigation__icon">&nbsp;</span>
+           <div className="nav-con">
+           <input type="checkbox" className="navigation__checkbox" id="navi-toggle"></input>
+            <label htmlFor="navi-toggle" className="navigation__button">
+                    <span className="navigation__icon">&nbsp;</span>
             </label>
-          
+
             <div className="navbar-logo">
                 <Link to="/"><img src={Logo} alt="LOGO" className="navbar-logo-img"></img></Link>
             </div>
+            </div>
+
             <div className="navbar-links">
-                    <Link href="#" className="navbar-link navbar-link__1 ">Hospitals</Link>
-                    <Link href="#" className="navbar-link navbar-link__2 ">Buy/sell</Link>
-                    <Link href="#" className="navbar-link navbar-link__3 ">Covid Help</Link>
-                    <Link href="#" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
+                    <Link href="/" className="navbar-link navbar-link__1 ">Hospitals</Link>
+                    <Link href="/" className="navbar-link navbar-link__2 ">Buy/sell</Link>
+                    <Link href="/" className="navbar-link navbar-link__3 ">Covid Help</Link>
+                    <Link href="/" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
             </div>
         </div>
         
