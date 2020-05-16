@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import HomePage from './Pages/homepage';
-import Navbarheader from './components/navbar/navbar.component';
+import Navbarheader from './Components/navbar/navbar.component';
 
 
 class App extends Component{
