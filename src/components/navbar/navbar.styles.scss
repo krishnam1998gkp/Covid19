@@ -1,5 +1,7 @@
 .hidden{
-    display: none !important;
+    @media only screen and (max-width :600px){
+        display: none !important;
+    }
 }
 .nav-con{
     display: flex;
