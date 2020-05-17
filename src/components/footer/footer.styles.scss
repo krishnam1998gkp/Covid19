@@ -55,6 +55,10 @@
             p{
                 color: green;
             }
+            &-link{
+                color: green;
+                text-decoration: underline;
+            }
         }
         &__right{
             display: flex;
@@ -67,6 +71,10 @@
             }
             p{
                 color: green;
+            }
+            &-link{
+                color: green;
+                text-decoration: underline;
             }
         }
     }
