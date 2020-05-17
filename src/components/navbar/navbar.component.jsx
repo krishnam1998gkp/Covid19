@@ -37,7 +37,7 @@ class Navbarheader extends Component{
             </div>
             </div>
 
-            <div className={`navbar-links ${isBoxVisible ? "" : "hidden"}`}>
+            <div className={`navbar-links ${isBoxVisible ? "visible" : "hidden"}`}>
                     <Link href="/" className="navbar-link navbar-link__1 ">Hospitals</Link>
                     <Link href="/" className="navbar-link navbar-link__2 ">Buy/sell</Link>
                     <Link href="/" className="navbar-link navbar-link__3 ">Covid Help</Link>
