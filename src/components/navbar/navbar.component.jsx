@@ -8,20 +8,27 @@ import Logo from '../../assets/logo-nav.svg';
 class Navbarheader extends Component{
     constructor(){
         super();
+
+        this.state = {
+          isBoxVisible:false
+        };
       }
 
+      toggleBox = () => {
+        this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));
+      };
+
     render(){
-
-
+      const { isBoxVisible } = this.state;
 
     return(
     <div className="section-navbar">
         <title>covidcare</title>
         
         <div className="navbar">
-           <div className="nav-con">
+           <div className="nav-con" >
            <input type="checkbox" className="navigation__checkbox" id="navi-toggle"></input>
-            <label htmlFor="navi-toggle" className="navigation__button">
+            <label htmlFor="navi-toggle" className="navigation__button" onClick={this.toggleBox}>
                     <span className="navigation__icon">&nbsp;</span>
             </label>
 
@@ -30,7 +37,7 @@ class Navbarheader extends Component{
             </div>
             </div>
 
-            <div className="navbar-links">
+            <div className={`navbar-links ${isBoxVisible ? "visible" : "hidden"}`}>
                     <Link href="/" className="navbar-link navbar-link__1 ">Hospitals</Link>
                     <Link href="/" className="navbar-link navbar-link__2 ">Buy/sell</Link>
                     <Link href="/" className="navbar-link navbar-link__3 ">Covid Help</Link>
