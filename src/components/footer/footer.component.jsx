@@ -16,8 +16,6 @@ const Footer = ()=>(
                     <p>Mongodb</p>
                     <p>Node js</p>
                 </div>
-                
-
                 <div className="footer-info__right">
                     <h4>Github Profiles</h4>
                     <p><Link className="footer-info__right-link">aman</Link></p>
