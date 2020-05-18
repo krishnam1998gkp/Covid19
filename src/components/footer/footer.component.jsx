@@ -7,7 +7,7 @@ const Footer = ()=>(
     <div className="section-footer">
          <div className="footer-signup">
              <p>Come and expolre us</p>
-            <Rectbtn></Rectbtn>
+            {/* <Rectbtn></Rectbtn> */}
          </div>
             <div className="footer-info">
                 <div className="footer-info__left">
