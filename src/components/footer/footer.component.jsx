@@ -1,5 +1,5 @@
 import React from 'react';
-import Rectbtn from '../rectangular-button/rectangular-button.component';
+//import Rectbtn from '../rectangular-button/rectangular-button.component';
 import './footer.styles.scss';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const Footer = ()=>(
     <div className="section-footer">
          <div className="footer-signup">
              <p>Come and expolre us</p>
-            <Rectbtn></Rectbtn>
+            
          </div>
             <div className="footer-info">
                 <div className="footer-info__left">
