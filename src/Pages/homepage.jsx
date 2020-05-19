@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './homepage-styles.css';
-import Piechart from '../Components/piechart/piechart.component';
+import Piechart from '../Components/datachart/piechart.component';
 
 
 class HomePage extends Component{
