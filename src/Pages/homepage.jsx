@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './homepage-styles.css';
+import Table from '../Components/table/table-component';
 
 class HomePage extends Component{
     constructor(){
@@ -49,6 +50,11 @@ class HomePage extends Component{
                      </div>
                     
                     </div>
+                </div>
+                <h1 className="wrldtbletitle">Cases Around the World</h1>
+                <div className="india-table">
+                    
+                    <Table />
                 </div>
             </div>
         )
