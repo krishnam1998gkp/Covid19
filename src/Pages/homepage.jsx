@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './homepage-styles.css';
 import Piechart from '../Components/datachart/piechart.component';
-
+import Dailydatachart from '../Components/datachart/dailychart.component';
 
 class HomePage extends Component{
     constructor(){
@@ -54,6 +54,7 @@ class HomePage extends Component{
                     </div>
                 </div>
                 <Piechart key={infos._id} infos={infos} name={'India'}></Piechart>
+                <Dailydatachart/>
             </div>
         )
     }
