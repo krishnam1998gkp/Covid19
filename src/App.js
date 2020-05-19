@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React,{Component} from 'react';
-import {Switch , Route, Redirect} from 'react-router-dom';
+import {Switch , Route} from 'react-router-dom';
 
 import HomePage from './Pages/homepage';
 import Navbarheader from './Components/navbar/navbar.component';

@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import './homepage-styles.css';
+import Piechart from '../Components/piechart/piechart.component';
+
 
 class HomePage extends Component{
     constructor(){
@@ -17,7 +19,8 @@ class HomePage extends Component{
     }
     render(){
         let {infos} = this.state;
-        console.log(infos);
+        //console.log(infos._id);
+        
         return(
             <div className="homepage">
                 <div className="updates">
@@ -29,7 +32,7 @@ class HomePage extends Component{
                                 <h3 className="data-num">{infos.confirmed}</h3>
                             </div>
                             <div className="link">
-                            <a href="#" className="btn btn-black">Learn More</a></div>
+                            <a href="#f" className="btn btn-black">Learn More</a></div>
                      </div>
                      <div className="card">
                             <div className="data">
@@ -37,7 +40,7 @@ class HomePage extends Component{
                                 <h3 className="data-num red">{infos.active}</h3>
                             </div>
                             <div className="link">
-                            <a href="#" className="btn btn-black">Learn More</a></div>
+                            <a href="#f" className="btn btn-black">Learn More</a></div>
                      </div>
                      <div className="card">
                             <div className="data">
@@ -45,11 +48,12 @@ class HomePage extends Component{
                                 <h3 className="data-num green">{infos.recovered}</h3>
                             </div>
                             <div className="link">
-                            <a href="#" className="btn btn-black">Learn More</a></div>
+                            <a href="#f" className="btn btn-black">Learn More</a></div>
                      </div>
                     
                     </div>
                 </div>
+                <Piechart key={infos._id} infos={infos} name={'India'}></Piechart>
             </div>
         )
     }
