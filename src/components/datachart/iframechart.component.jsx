@@ -7,7 +7,7 @@ const Iframechart =({url})=> (
         height="600px"
         id="myId"
         className="dailydatachart"
-        display="block"
+        //display="block"
         position="relative"/>
 )
 
