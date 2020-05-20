@@ -3,11 +3,11 @@ import Iframe from 'react-iframe';
 
 const Iframechart =({url})=> (
         <Iframe url= {`${url}`}
-        width="100%"
+        //width="700px"
         height="600px"
         id="myId"
         className="dailydatachart"
-        display="initial"
+        display="block"
         position="relative"/>
 )
 

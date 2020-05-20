@@ -2,6 +2,17 @@
     margin-top: 5rem;
 }
 .dailydatachart{
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 5rem;
-    padding: 0 5rem;
+    width: 700px;
+    border: none;
+    border-width: 0px;
+
+    @media only screen and (max-width:600px)
+    {
+        width: 95%;
+    
+    }
+   // display:initial
 }
