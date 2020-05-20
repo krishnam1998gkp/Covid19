@@ -1,9 +1,7 @@
 import React from 'react';
 import Iframe from 'react-iframe';
 
-const url = "https://ourworldindata.org/grapher/daily-cases-covid-19?tab=map&country=IND";
-
-const Dailydatachart =()=> (
+const Iframechart =({url})=> (
         <Iframe url= {`${url}`}
         width="100%"
         height="600px"
@@ -13,4 +11,4 @@ const Dailydatachart =()=> (
         position="relative"/>
 )
 
-export default Dailydatachart;
+export default Iframechart;

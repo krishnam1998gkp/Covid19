@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import './homepage-styles.css';
 import Table from '../Components/table/table-component';
 import Piechart from '../Components/datachart/piechart.component';
-import Dailydatachart from '../Components/datachart/dailychart.component';
+import Iframechart from '../Components/datachart/iframechart.component';
 
 class HomePage extends Component{
     constructor(){
@@ -60,7 +60,8 @@ class HomePage extends Component{
                     <Table />
                 </div>
                 <Piechart key={infos._id} infos={infos} name={'India'}></Piechart>
-                <Dailydatachart/>
+                <Iframechart url={"https://ourworldindata.org/grapher/daily-cases-covid-19?tab=map&country=IND"}/>
+                <Iframechart url={"https://ourworldindata.org/grapher/covid-confirmed-cases-since-100th-case"}/>
             </div>
         )
     }
