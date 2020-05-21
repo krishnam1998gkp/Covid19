@@ -1,8 +1,6 @@
 import React from 'react';
 import Rectbtn from '../rectangular-button/rectangular-button.component';
 import FormInput from '../form-input/form-input.component';
-// import CustomButton from '../custom-button/custom-button.component';
-
 import './sign-in.styles.scss';
 
 
@@ -16,6 +14,10 @@ class SignIn extends React.Component{
         }
     }
 
+    handleChange = event=>{
+        const {value,name} = event.target;
+        this.setState({[name]: value})
+    }
 
     render(){
         return(

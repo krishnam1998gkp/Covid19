@@ -9,37 +9,58 @@ class signup extends React.Component{
     constructor(){
         super();
         this.state = {
-            displayName:'',
+            name:'',
             email:'',
-            mobilenumber:'',
+            mobile:'',
             pin:'',
+            state:'',
+            district:'',
+            address1:'',
+            address2:'',
             password:'',
             confirmPassword:''
         }
     }
 
-// handleSubmit = async event=>{
-//     event.preventDefault();
-//     const {displayName,email,password,confirmPassword}= this.state;
+handleSubmit = async event=>{
+    event.preventDefault();
+    const {name,mobile,email,pin,state,district,address1,address2,password,confirmPassword}= this.state;
 
-//     if(password !== confirmPassword){
-//         alert("Password don't match");
-//         return;
-//     }
+    if(password !== confirmPassword){
+        alert("Password don't match");
+        return;
+    }
 
-//     try{
-//         const {user} = await auth.createUserWithEmailAndPassword(email,password);
-//         await createUserProfileDocument(user,{displayName});
-//         this.setState({
-//             displayName:'',
-//             email:'',
-//             password:'',
-//             confirmPassword:''
-//         })
-//     }catch(error){
-//         console.error(error);
-//     }
-// }
+    try{
+        console.log(name);
+        console.log(email);
+        console.log(pin);
+        console.log(address1);
+        console.log(address2);
+        alert(state);
+        alert(mobile);
+        alert(district);
+
+
+        this.setState({
+            name:'',
+            email:'',
+            pin:'',
+            mobile:'',
+            state:'',
+            district:'',
+            password:'',
+            confirmPassword:''
+        })
+    }catch(error){
+        console.error(error);
+    }
+}
+
+
+changedistrict = event=>{
+    this.setState({district:event.target.value});
+}
 
 handleChange = event=>{
     const {name,value} = event.target;
@@ -47,13 +68,14 @@ handleChange = event=>{
     this.setState({[name]:value});
 }
 
-fun = event=>{
-    console.log(event.target.value);
-    alert('hello');
-}
+
+
 
 
 selct_district = event=>{
+
+    this.setState({state:event.target.value})
+
     var $val=event.target.value;
 
     if ($val === 'SELECT STATE') {
@@ -461,7 +483,7 @@ selct_district = event=>{
 
 
     render(){
-        const {displayName,email,password,confirmPassword,pin,mobilenumber}= this.state;
+        const {name,email,pin,mobile,address1,address2,password,confirmPassword}= this.state;
         return(
             <div className='sign-up'>
                 <form className='sign-up-form' onSubmit={this.handleSubmit}>
@@ -470,10 +492,10 @@ selct_district = event=>{
                 <span>Signup with your email and password</span>
                 <FormInput 
                 type='text'
-                name ='displayName'
-                value={displayName}
+                name ='name'
+                value={name}
                 onChange={this.handleChange}
-                label='Display Name'
+                label='Name'
                 required>
                 </FormInput>
 
@@ -489,8 +511,8 @@ selct_district = event=>{
                 
                 <FormInput 
                 type='number'
-                name ='mobilenumber'
-                value={mobilenumber}
+                name ='mobile'
+                value={mobile}
                 onChange={this.handleChange}
                 label='Mobile Number'
                 required>
@@ -510,8 +532,26 @@ selct_district = event=>{
 
                 <div className="input-group">
                   Select State: <select id="listBox"  onChange={this.selct_district}></select>
-                  Select District: <select id='secondlist'></select>
+                  Select District: <select id='secondlist'  onChange={this.changedistrict}></select>
                </div>
+
+               <FormInput 
+                type='text'
+                name ='address1'
+                value={address1}
+                onChange={this.handleChange}
+                label='Address 1'
+                required>
+                </FormInput>
+
+                <FormInput 
+                type='text'
+                name ='address2'
+                value={address2}
+                onChange={this.handleChange}
+                label='Address 2'
+                required>
+                </FormInput>
 
                 <FormInput 
                 type='password'
