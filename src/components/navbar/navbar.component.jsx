@@ -41,7 +41,7 @@ class Navbarheader extends Component{
                     <Link href="/" className="navbar-link navbar-link__1 ">Hospitals</Link>
                     <Link href="/" className="navbar-link navbar-link__2 ">Buy/sell</Link>
                     <Link href="/" className="navbar-link navbar-link__3 ">Covid Help</Link>
-                    <Link href="/" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
+                    <Link to="/signinup" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
             </div>
         </div>
         
