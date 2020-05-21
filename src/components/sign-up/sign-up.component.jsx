@@ -32,14 +32,14 @@ handleSubmit = async event=>{
     }
 
     try{
-        console.log(name);
-        console.log(email);
-        console.log(pin);
-        console.log(address1);
-        console.log(address2);
-        alert(state);
-        alert(mobile);
-        alert(district);
+        // console.log(name);
+        // console.log(email);
+        // console.log(pin);
+        // console.log(address1);
+        // console.log(address2);
+        // alert(state);
+        // alert(mobile);
+        // alert(district);
 
 
         this.setState({
@@ -49,6 +49,8 @@ handleSubmit = async event=>{
             mobile:'',
             state:'',
             district:'',
+            address1:'',
+            address2:'',
             password:'',
             confirmPassword:''
         })
