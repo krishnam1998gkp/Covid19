@@ -1,5 +1,6 @@
 import React from 'react';
 import FormInput from '../form-input/form-input.component';
+import Rectbtn from '../rectangular-button/rectangular-button.component';
 import $ from 'jquery';
 import './state';
 import './sign-up.styles.scss';
@@ -530,8 +531,8 @@ selct_district = event=>{
                 required>
                 </FormInput>
 
-
-                {/* <CustomButton type='submit'>SIGN UP</CustomButton> */}
+                <Rectbtn info={'Signup'}></Rectbtn>
+                
                 </form>
             </div>
             

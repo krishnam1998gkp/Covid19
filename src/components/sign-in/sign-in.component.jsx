@@ -1,4 +1,5 @@
 import React from 'react';
+import Rectbtn from '../rectangular-button/rectangular-button.component';
 import FormInput from '../form-input/form-input.component';
 // import CustomButton from '../custom-button/custom-button.component';
 
@@ -39,7 +40,8 @@ class SignIn extends React.Component{
                      handleChange={this.handleChange}
                      required />
                 <div className='buttons'>
-                {/* <CustomButton type="submit" >sign in</CustomButton> */}
+                
+                <Rectbtn info={'Sign In'}></Rectbtn>
                 </div>
                 
             </form>
