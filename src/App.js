@@ -29,7 +29,6 @@ class App extends Component{
   render(){
     const {currentUser} = this.props;
     return(
-      console.log('ch',currentUser),
       <div className="App">
         <Navbarheader/>
         

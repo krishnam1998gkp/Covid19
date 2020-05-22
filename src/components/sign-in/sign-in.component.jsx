@@ -35,10 +35,14 @@ class SignIn extends React.Component{
                 .then(data => {
                     if(data.stat===-1)alert(data.message);
                     else{
-                        
+                        if(!data.token){
+                            alert('wrong email or password');
+                        }
+                        else{
                         localStorage.setItem("token",data.token)
                         alert('loggedIn successfully');
                         this.setState({email:'',password:''})
+                        }
                     }
                 });
         }catch(error){

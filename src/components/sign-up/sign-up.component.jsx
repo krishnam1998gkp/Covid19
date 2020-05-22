@@ -32,14 +32,35 @@ handleSubmit = async event=>{
     }
 
     try{
-        console.log(name);
-        console.log(email);
-        console.log(pin);
-        console.log(address1);
-        console.log(address2);
-        alert(state);
-        alert(mobile);
-        alert(district);
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: (JSON.stringify({name:name,email:email,mobile:mobile,pin:pin,state:state,district:district,address1:address1,address2:address2,password:password}))
+        };
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const url = 'https://covid19pr.herokuapp.com/signup'
+        fetch(proxyUrl+url, requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                if(data.stat==="200"){
+                    alert("please check your email to verify");
+                    
+                }
+                else{
+                    console.log(data);
+                    alert(data.message.errmsg);
+                }
+            })
+
+        // console.log(name);
+        // console.log(email);
+        // console.log(pin);
+        // console.log(address1);
+        // console.log(address2);
+        // alert(state);
+        // alert(mobile);
+        // alert(district);
 
 
         this.setState({

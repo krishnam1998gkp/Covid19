@@ -17,6 +17,12 @@ class Navbarheader extends Component{
         };
       }
 
+      signOut=()=>{
+        //const {setCurrentUser} = this.props;
+        //setCurrentUser();
+        localStorage.clear();
+      }
+
       toggleBox = () => {
         this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));
       };
@@ -46,7 +52,7 @@ class Navbarheader extends Component{
                     <Link href="/" className="navbar-link navbar-link__1 ">Hospitals</Link>         
                     <Link href="/" className="navbar-link navbar-link__3 ">Covid Help</Link>
                     {currentUser?
-                     <Link to="/signout" className="navbar-link navbar-link__4 btn btn-green">SIGNOUT</Link> 
+                     <div  className="navbar-link navbar-link__4 btn btn-green"  onClick={this.signOut}>SIGNOUT</div> 
                     :<Link to="/signinup" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
                     }
             </div>
@@ -56,6 +62,10 @@ class Navbarheader extends Component{
     )
   }
 }
+
+// const mapDispatchToProps = dispatch=>({
+//   setCurrentUser:user=> dispatch(setCurrentUser(user))
+// })
 
 const mapStateToProps = createStructuredSelector({
   currentUser:selectCurrentUser
