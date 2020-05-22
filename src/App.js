@@ -4,6 +4,7 @@ import {Switch , Route,Redirect} from 'react-router-dom';
 import {setCurrentUser} from './redux/user/user.actions';
 import {selectCurrentUser} from './redux/user/user.selector';
 
+import Hospital from './Pages/Hospitals/hospital.component';
 import HomePage from './Pages/homepage';
 import Navbarheader from './Components/navbar/navbar.component';
 import Footer from './Components/footer/footer.component';
@@ -34,6 +35,7 @@ class App extends Component{
         
         <Switch>
         <Route exact path='/' component={HomePage} />
+        <Route exact path='/hospital' component={Hospital}/>
         <Route 
           exact path='/signinup' 
           render={() =>

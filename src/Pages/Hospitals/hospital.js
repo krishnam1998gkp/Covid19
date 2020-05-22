@@ -1,3 +1,6 @@
+import $ from 'jquery';
+const google = window.google;
+
 var map;
 function initMap() {
    map = new google.maps.Map(document.getElementById('map'), {
@@ -5,9 +8,9 @@ function initMap() {
       zoom: 5
    });
 
-   var card = document.getElementById('pac-card');
+   //var card = document.getElementById('pac-card');
    var input = document.getElementById('pac-input');
-   var types = document.getElementById('type-selector');
+   //var types = document.getElementById('type-selector');
 
    var autocomplete = new google.maps.places.Autocomplete(input);
 
@@ -69,6 +72,9 @@ function initMap() {
    // setupClickListener('changetype-all', []);
    // lat:place.geometry.location.lat();
 }
+
+
+
 
 function nearbyHospital(map, latitute, longitute) {
    var location = { lat: latitute, lng: longitute };
