@@ -1,0 +1,24 @@
+.section-chatbot{
+    z-index: 15;
+    background-color: blue;
+    text-decoration: none;
+    text-align: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 120px;
+    height: 60px;
+    border-radius: 15px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbot,.chatbot:link,.chatbot:visited{
+    color: white;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+  }

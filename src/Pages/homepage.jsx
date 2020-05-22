@@ -54,15 +54,17 @@ class HomePage extends Component{
                     
                     </div>
                 </div>
-                <h1 className="wrldtbletitle">Cases Around the World</h1>
-                <div className="india-table">
-                    
-                    <Table />
-                </div>
+               
+                
                 <Piechart key={infos._id} infos={infos} name={'India'}></Piechart>
                 <div className="chart">
                 <Iframechart url={"https://ourworldindata.org/grapher/daily-cases-covid-19?tab=map&country=IND"}/>
                 <Iframechart url={"https://ourworldindata.org/grapher/covid-confirmed-cases-since-100th-case"}/>
+                </div>
+                <h1 className="wrldtbletitle">Cases Around the World</h1>
+                <div className="india-table">
+                    
+                    <Table />
                 </div>
             </div>
         )

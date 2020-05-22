@@ -1,0 +1,23 @@
+.covidhelppage{
+    padding-top: 8rem;
+    display: flex;
+    justify-content: space-around;
+}
+.toc{
+    width: 10% !important;
+    font-size: 0.8rem;
+    color: green !important;
+
+}
+.home{
+    width: 70%;
+}
+.paper{
+    font-size: 0.8rem;
+    padding: 1rem 0;
+    
+    & h1{
+        color: green;
+        text-transform: uppercase;
+    }
+}
