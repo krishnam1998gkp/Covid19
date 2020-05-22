@@ -1,9 +1,12 @@
 /* eslint-disable no-useless-constructor */
 import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
-import './navbar.styles.scss';
+import {createStructuredSelector} from 'reselect';
+import {selectCurrentUser} from '../../redux/user/user.selector';
 
+import './navbar.styles.scss';
 import Logo from '../../assets/logo-nav.svg';
+import { connect } from 'react-redux';
 
 class Navbarheader extends Component{
     constructor(){
@@ -20,8 +23,9 @@ class Navbarheader extends Component{
 
     render(){
       const { isBoxVisible } = this.state;
-
+      const {currentUser}=this.props;
     return(
+
     <div className="section-navbar">
         <title>covidcare</title>
         
@@ -38,10 +42,13 @@ class Navbarheader extends Component{
             </div>
 
             <div className={`navbar-links ${isBoxVisible ? "visible" : "hidden"}`}>
-                    <Link href="/" className="navbar-link navbar-link__1 ">Hospitals</Link>
                     <Link href="/" className="navbar-link navbar-link__2 ">Buy/sell</Link>
+                    <Link href="/" className="navbar-link navbar-link__1 ">Hospitals</Link>         
                     <Link href="/" className="navbar-link navbar-link__3 ">Covid Help</Link>
-                    <Link to="/signinup" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
+                    {currentUser?
+                     <Link to="/signout" className="navbar-link navbar-link__4 btn btn-green">SIGNOUT</Link> 
+                    :<Link to="/signinup" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
+                    }
             </div>
         </div>
         
@@ -50,4 +57,8 @@ class Navbarheader extends Component{
   }
 }
 
-export default Navbarheader;
+const mapStateToProps = createStructuredSelector({
+  currentUser:selectCurrentUser
+})
+
+export default connect(mapStateToProps)(Navbarheader);

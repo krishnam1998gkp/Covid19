@@ -1,12 +1,16 @@
 import React from 'react';
 import Rectbtn from '../rectangular-button/rectangular-button.component';
 import FormInput from '../form-input/form-input.component';
+import {createStructuredSelector} from 'reselect';
+import {selectCurrentUser} from '../../redux/user/user.selector';
+
 import './sign-in.styles.scss';
+import { connect } from 'react-redux';
 
 
 class SignIn extends React.Component{
-    constructor(){
-        super();
+    constructor({currentUser}){
+        super({currentUser});
 
         this.state = {
             email: '',
@@ -18,12 +22,11 @@ class SignIn extends React.Component{
     handleSubmit =async event =>{
         event.preventDefault();
 
-        const {email,password} = this.state;
         try{
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: (JSON.stringify({email:email,password:password}))
+                body: (JSON.stringify({email:this.state.email,password:this.state.password}))
             };
             const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
             const url = 'https://covid19pr.herokuapp.com/public/login'
@@ -32,11 +35,12 @@ class SignIn extends React.Component{
                 .then(data => {
                     if(data.stat===-1)alert(data.message);
                     else{
+                        
                         localStorage.setItem("token",data.token)
-                        alert('success');
+                        alert('loggedIn successfully');
                         this.setState({email:'',password:''})
                     }
-                });    
+                });
         }catch(error){
             console.log(error);
         }
@@ -82,4 +86,5 @@ class SignIn extends React.Component{
     }
 }
 
-export default SignIn;
+const mapStateToProps = createStructuredSelector({currentUser:selectCurrentUser})
+export default connect(mapStateToProps)(SignIn);
