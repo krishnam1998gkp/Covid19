@@ -1,0 +1,22 @@
+table{
+    width: 725px;
+    margin:0 auto;
+    
+    
+}
+th,td{
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 16px;
+}
+tr:nth-child(even){
+    background: #f1f1f1;
+}
+
+th:nth-child(3),td:nth-child(3){
+    color: red;
+}
+th:nth-child(4),td:nth-child(4){
+    color: green;
+}

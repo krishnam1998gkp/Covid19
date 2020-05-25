@@ -1,9 +1,12 @@
 /* eslint-disable no-useless-constructor */
 import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
-import './navbar.styles.scss';
+import {createStructuredSelector} from 'reselect';
+import {selectCurrentUser} from '../../redux/user/user.selector';
 
+import './navbar.styles.scss';
 import Logo from '../../assets/logo-nav.svg';
+import { connect } from 'react-redux';
 
 class Navbarheader extends Component{
     constructor(){
@@ -14,14 +17,21 @@ class Navbarheader extends Component{
         };
       }
 
+      signOut=()=>{
+        //const {setCurrentUser} = this.props;
+        //setCurrentUser();
+        localStorage.clear();
+      }
+
       toggleBox = () => {
         this.setState(prevState => ({ isBoxVisible: !prevState.isBoxVisible }));
       };
 
     render(){
       const { isBoxVisible } = this.state;
-
+      const {currentUser}=this.props;
     return(
+
     <div className="section-navbar">
         <title>covidcare</title>
         
@@ -38,10 +48,13 @@ class Navbarheader extends Component{
             </div>
 
             <div className={`navbar-links ${isBoxVisible ? "visible" : "hidden"}`}>
-                    <Link href="/" className="navbar-link navbar-link__1 ">Hospitals</Link>
                     <Link href="/" className="navbar-link navbar-link__2 ">Buy/sell</Link>
-                    <Link href="/" className="navbar-link navbar-link__3 ">Covid Help</Link>
-                    <Link href="/" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
+                    <Link to="/hospital" className="navbar-link navbar-link__1 ">Hospitals</Link>         
+                    <Link to="/covidhelp" className="navbar-link navbar-link__3 ">Covid Help</Link>
+                    {currentUser?
+                     <div  className="navbar-link navbar-link__4 btn btn-green"  onClick={this.signOut}>SIGNOUT</div> 
+                    :<Link to="/signinup" className="navbar-link navbar-link__4 btn btn-green">Create Account for free</Link>
+                    }
             </div>
         </div>
         
@@ -50,4 +63,12 @@ class Navbarheader extends Component{
   }
 }
 
-export default Navbarheader;
+// const mapDispatchToProps = dispatch=>({
+//   setCurrentUser:user=> dispatch(setCurrentUser(user))
+// })
+
+const mapStateToProps = createStructuredSelector({
+  currentUser:selectCurrentUser
+})
+
+export default connect(mapStateToProps)(Navbarheader);
